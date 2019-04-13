@@ -10,9 +10,17 @@
     "test:e2e": "vue-cli-service test:e2e"
   },
   "dependencies": {
+    "apollo-cache-inmemory": "^1.5.1",
+    "apollo-client": "^2.5.1",
+    "apollo-link-context": "^1.0.17",
+    "apollo-link-rest": "^0.7.2",
     "core-js": "^2.6.5",
+    "graphql": "^14.2.1",
+    "graphql-anywhere": "^4.2.1",
+    "graphql-tag": "^2.10.1",
     "register-service-worker": "^1.6.2",
     "vue": "^2.6.6",
+    "vue-apollo": "^3.0.0-beta.28",
     "vue-router": "^3.0.1",
     "vuex": "^3.0.1"
   },
