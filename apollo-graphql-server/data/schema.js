@@ -18,19 +18,19 @@ type Character {
 
 type Planet {
     name: String
-    orbital_period: Integer
-    diameter: Integer
+    orbital_period: Int
+    diameter: Int
     climate: String
-    terrain: Stirng
-    population: Integer
+    terrain: String
+    population: Int
     residents: [Character]
 }
 
 type Film {
   title: String
-	episode_id: Integer
+	episode_id: Int
   director: String
-	release_date: Date
+	release_date: String
 	characters: [Character]
 	planets: [Planet]
 }
