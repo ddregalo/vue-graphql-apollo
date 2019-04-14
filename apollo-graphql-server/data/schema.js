@@ -3,7 +3,7 @@ import mocks from './mocks';
 
 const typeDefs = `
 type Query {
-  character(name: String, birthYear: String, gender: String, homeworld: String, films: [Film]): Author
+  character(name: String): Character
   allCharacters: [Character]
   getFortuneCookie: String
 }
