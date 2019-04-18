@@ -14,9 +14,9 @@ type Character {
   height: String
   mass: String
   hairColour: String
-  skinColor: Stirng
-  eyeColor: String
-	birthYear: String
+  skin_color: String
+  eye_color: String
+	birth_year: String
   gender: String
   homeworld: String
   films: [String]
@@ -25,7 +25,7 @@ type Character {
   starships: [String]
   created: String
   edited: String
-  url: Stirng
+  url: String
 }
 `;
 
