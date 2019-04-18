@@ -1,8 +1,7 @@
 import { makeExecutableSchema, addMockFunctionsToSchema } from 'graphql-tools';
 import resolvers from './resolvers';
 // import mocks from './mocks';
-// homeworld: Planet
-// films: [Film]
+
 const typeDefs = `
 type Query {
   allCharacters: [Character!]!
@@ -30,6 +29,23 @@ type Character {
 }
 `;
 
+const schema = makeExecutableSchema({ typeDefs, resolvers });
+
+// addMockFunctionsToSchema({ schema, mocks });
+
+export default schema;
+
+
+// Additional snippets below to add
+
+
+// example code to CRUD on graphQL
+// type Mutation {
+//   createUser(name: String!): User!
+//   updateUser(id: ID!, name: String!): User
+//   deleteUser(id: ID!): User
+// }
+
 
 // type Planet {
 //   id: Int
@@ -51,9 +67,3 @@ type Character {
 // characters: [Character]
 // planets: [Planet]
 // }
-
-const schema = makeExecutableSchema({ typeDefs, resolvers });
-
-// addMockFunctionsToSchema({ schema, mocks });
-
-export default schema;
