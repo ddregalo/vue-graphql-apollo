@@ -6,6 +6,9 @@ const typeDefs = `
 type Query {
   allCharacters: [Character!]!
   character(id: Int!): Character
+  allFilms: [Film!]!
+  film(id: Int!): Film
+  films: [Film]!
   getFortuneCookie: String
 }
 
@@ -19,10 +22,27 @@ type Character {
 	birth_year: String
   gender: String
   homeworld: String
-  films: [String]
+  films: Film
   species: [String]
   vehicles: [String]
   starships: [String]
+  created: String
+  edited: String
+  url: String
+}
+
+type Film {
+  title: String
+  episode_id: Int
+  opening_crawl: String
+  director: String
+  producer: String
+  release_date: String
+  characters: [String]
+  planets: [String]
+  starships: [String]
+  vehicles: [String]
+  species: [String],
   created: String
   edited: String
   url: String
@@ -38,8 +58,7 @@ export default schema;
 
 // Additional snippets below to add
 
-
-// example code to CRUD on graphQL
+// CRUD
 // type Mutation {
 //   createUser(name: String!): User!
 //   updateUser(id: ID!, name: String!): User
@@ -56,14 +75,4 @@ export default schema;
 //   terrain: String
 //   population: Int
 //   residents: [Character]
-// }
-
-// type Film {
-// id: Int
-// title: String
-// episode_id: Int
-// director: String
-// release_date: String
-// characters: [Character]
-// planets: [Planet]
 // }
