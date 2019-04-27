@@ -12,7 +12,9 @@ import VueApollo from 'vue-apollo';
 Vue.config.productionTip = false;
 Vue.use(VueApollo);
 
-const restLink = new RestLink({ uri: 'https://jsonplaceholder.typicode.com/albums/' });
+// const restLink = new RestLink({ uri: 'https://jsonplaceholder.typicode.com/albums/' });
+const restLink = new RestLink({ uri: 'http://localhost:3000/starwars' });
+
 
 const apolloClient = new ApolloClient({
   link: restLink,
@@ -28,5 +30,5 @@ new Vue({
   router,
   store,
   provide: apolloProvider.provide(),
-  render: h => h(App),
+  render: (h) => h(App),
 }).$mount('#app');
