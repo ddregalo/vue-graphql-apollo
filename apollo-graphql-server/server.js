@@ -7,8 +7,12 @@ const GRAPHQL_PORT = 3000;
 
 const graphQLServer = express();
 
-graphQLServer.use('/graphql', bodyParser.json(), graphqlExpress({ schema }));
-graphQLServer.use('/graphiql', graphiqlExpress({ endpointURL: '/graphql' }));
+graphQLServer.use('/starwars', bodyParser.json(), graphqlExpress({
+  schema: schema,
+  routeValue: root,
+  graphiql: true
+}));
+graphQLServer.use('/graphiql', graphiqlExpress({ endpointURL: '/starwars' }));
 
 graphQLServer.listen(GRAPHQL_PORT, () =>
   console.log(
