@@ -1,0 +1,25 @@
+.container {
+  width: 80%;
+  margin: auto;
+}
+
+.card {
+  width: 100%;
+  border: solid gray 1px;
+  border-radius: 10px;;
+  margin: 10px;
+  padding: 10px;
+  display: grid;
+  grid-template-columns: 20% 20% 20% 20% 20%; 
+}
+
+.card-title {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 30px;
+}
+
+.height, .mass, .gender, .homeworld {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 16px;
+  margin: auto;
+}
