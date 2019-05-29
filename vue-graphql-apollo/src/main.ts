@@ -9,6 +9,7 @@ import { ApolloClient } from 'apollo-client';
 import { InMemoryCache } from 'apollo-cache-inmemory';
 import { RestLink } from 'apollo-link-rest';
 import VueApollo from 'vue-apollo';
+import { createProvider } from './vue-apollo'
 
 Vue.config.productionTip = false;
 Vue.use(VueApollo);
@@ -23,11 +24,17 @@ const apolloClient = new ApolloClient({
 
 const apolloProvider = new VueApollo({
   defaultClient: apolloClient,
+  defaultOptions: {
+    $query: {
+      fetchPolicy: 'cache-and-network',
+    },
+  }
 });
 
 new Vue({
   router,
   store,
   provide: apolloProvider.provide(),
-  render: (h) => h(App),
+  apolloProvider: createProvider(),
+  render: (h) => h(App)
 }).$mount('#app');
