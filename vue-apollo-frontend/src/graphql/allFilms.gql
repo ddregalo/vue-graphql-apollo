@@ -1,0 +1,6 @@
+query allFilms {
+    allFilms {
+        title
+        opening_crawl
+    }
+}
