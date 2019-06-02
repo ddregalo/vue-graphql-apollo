@@ -1,0 +1,7 @@
+query allCharacters {
+    allCharacters {
+        name
+        gender
+        eye_color
+    }
+}
