@@ -1,6 +1,5 @@
 <template>
   <div class="container">
-    <h1>StarWars Characters</h1>
     <div class="characters">
       <b-card-group deck>
         <div v-for="character in allCharacters" :key="character.name">
@@ -35,10 +34,8 @@ export default {
 </script>
 
 <style scoped lang="scss">
-  h1 {
-    text-transform: uppercase;
-  }
   .characters {
+    padding-top: 30px;
     text-align: left;
   }
 </style>
