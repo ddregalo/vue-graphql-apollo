@@ -17,7 +17,7 @@
 </template>
 <script lang="js">
     export default {
-     name: "Character",
+     name: "character",
      props: {
       character: {},  
      }  

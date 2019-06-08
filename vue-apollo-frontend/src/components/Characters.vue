@@ -15,7 +15,7 @@ import Character from '@/components/Character.vue';
 import gql from 'graphql-tag';
 
 export default {
-  name: "Characters",
+  name: "characters",
   components: {
     Character
   },
