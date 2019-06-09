@@ -3,6 +3,7 @@
     <h1>Vue x GraphQL x Vue-Apolo</h1>
     <div class="main-text">
       <h5>ABOUT</h5>
+      <hr/>
       <p>
         This is a proof of concept project experimenting with implementing 
         GraphQL over an already running REST Api with Apollo - Server + Client 
@@ -22,6 +23,7 @@
       <h5>
         PROCESS
       </h5>
+       <hr/>
       <p>
         Because making a REST Api wasn't the focus of this project I chose to 
         use a free online REST Api called SWAPI The Star Wars Api. After 
@@ -34,21 +36,23 @@
       <h5>
         FRAMEWORKS
       </h5>
+       <hr/>
       <p>
         These are the main frameworks I used in this project. Each of them has its
         own range of dependencies that I won't be listing here.
       </p>
-        <p>GraphQL Apollo (Server / Cpent)</p>
-        <p>VueJS</p>
-        <p>Vue-Apollo</p>
-        <p>Bootstrap Vue</p>
-        <p>Axios (Server)</p>    
+        <p class="list">GraphQL Apollo (Server / Cpent)</p>
+        <p class="list">VueJS</p>
+        <p class="list">Vue-Apollo</p>
+        <p class="list">Bootstrap Vue</p>
+        <p class="list">Axios (Server)</p>    
       <p id="test-f">TEST FRAMEWORKS</p>
-        <p>Jest - Unit Testing</p>
-        <p>Cypress - End-2-end Testing</p>   
+        <p class="list">Jest - Unit Testing</p>
+        <p class="list">Cypress - End-2-end Testing</p>   
       <h5>
         LIMITATIONS AND COMMENTS
       </h5>
+       <hr/>
       <p>
         All in all I enjoyed working with GraphQL and I it felt pretty cool to use.
         There are a couple of points that bother me: weak TypeScript support in 
@@ -68,10 +72,12 @@
   h5 {
     color: #002d57;
     text-transform: uppercase;
+    padding-top: 30px;
   }
 
   p {
     padding-bottom: 2px;
+    text-align: left;
   }
 
   .about {
@@ -80,6 +86,12 @@
     min-height: 600px;
     padding: 35px 50px 35px 50px;
     color: #d1e8ff;
+  }
+
+  .list {
+    text-align: center;
+    padding: 0;
+    margin: 0;
   }
 
   .main-text {
@@ -96,5 +108,9 @@
   #test-f {
     text-transform: uppercase;
     font-weight: 600;
+    text-align: center;
+    padding-top: 15px;
+    padding-bottom: 0;
+    margin-bottom: 0;
   }
 </style>
