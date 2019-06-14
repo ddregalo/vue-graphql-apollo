@@ -11,10 +11,15 @@
             </b-card-text>
             <div slot="footer">
                 <div>
-                    <b-button block href="#" v-b-toggle="'accordion' + character.name.trim()" variant="info">Movies</b-button>
-                    <b-collapse :id="'accordion' + character.name.trim()" visible accordion="my-accordion" role="tabpanel">
-                        <b-card-text>Movies listed here</b-card-text>
-                        <b-card-text>{{ text }}</b-card-text>
+                    <b-button 
+                        block href="#" 
+                        v-b-toggle="'accordion' + character.name.trim()" 
+                        variant="info"
+                        v-on:click="getCharacterMovies">Movies
+                    </b-button>
+                    <b-collapse :id="'accordion' + character.name.trim()" visible accordion="movie-accordion" role="tabpanel">
+                        <b-card-text>Movies listed here:</b-card-text>
+                        <b-card-text>{{ movies }}</b-card-text>
                     </b-collapse>
                 </div>
             </div>
@@ -25,8 +30,18 @@
     export default {
      name: "character",
      props: {
-      character: {},  
-     }  
+      character: {},
+      movies: [],
+     },
+     methods: {
+         getCharacterMovies: function() {
+             var movieList = ["DeathStar", "The DarkSide", "Empire Strikes Back"];
+             return this.movies = movieList;
+         },
+     },
+     apollo: {
+
+     },
     }
 </script>
 <style lang="scss" scoped>
