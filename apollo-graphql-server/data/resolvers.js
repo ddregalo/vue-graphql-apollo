@@ -31,9 +31,12 @@ const resolvers = {
         },
         film: (parent, args) => {
             const { id } = args
-            return axios.get(baseURL + `films/${id}}`)
+            return axios.get(`${baseUrl}films/${id}`)
                 .then(res => {
                     res.data
+                })
+                .catch(error => {
+                    console.log("There has been an error processing your request. Please try again.");
                 });
         },
     },
@@ -41,7 +44,6 @@ const resolvers = {
         films: (parent, args, ctx, info) => {
             let urlArray = parent.url.split('/');
             const filmId = urlArray[urlArray.length - 2];
-            console.log('filmId: ', filmId);
             return axios.get(`${baseUrl}films/${filmId}`)
                 .then(res => {
                     return res.data
