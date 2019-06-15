@@ -1,25 +1,24 @@
 <template>
     <div class="character">  
-        <b-card :title="character.name">
+        <b-card :title="role.name">
             <b-card-text>
                 <div class="character-card">
                     <p>Gender: </p>
-                    <p>{{character.gender}}</p>
+                    <p>{{role.gender}}</p>
                     <p>Eye-Color: </p>
-                    <p>{{character.eye_color}}</p>
+                    <p>{{role.eye_color}}</p>
                 </div>
             </b-card-text>
             <div slot="footer">
                 <div>
                     <b-button 
                         block href="#" 
-                        v-b-toggle="'accordion' + character.name.trim()" 
-                        variant="info"
-                        v-on:click="getCharacterMovies">Movies
+                        v-b-toggle="'accordion' + role.name.trim()" 
+                        variant="info">Movies
                     </b-button>
-                    <b-collapse :id="'accordion' + character.name.trim()" visible accordion="movie-accordion" role="tabpanel">
+                    <b-collapse :id="'accordion' + role.name.trim()" visible accordion="movie-accordion" role="tabpanel">
                         <b-card-text>Movies listed here:</b-card-text>
-                        <b-card-text>{{ movies }}</b-card-text>
+                        <b-card-text>{{ character.films.title }}</b-card-text>
                     </b-collapse>
                 </div>
             </div>
@@ -27,21 +26,24 @@
     </div>
 </template>
 <script lang="js">
-    export default {
-     name: "character",
-     props: {
-      character: {},
-      movies: [],
-     },
-     methods: {
-         getCharacterMovies: function() {
-             var movieList = ["DeathStar", "The DarkSide", "Empire Strikes Back"];
-             return this.movies = movieList;
-         },
-     },
-     apollo: {
+    import gql from 'graphql-tag';
 
-     },
+    export default {
+        name: "character",
+        props: {
+            role: {},
+        },
+        apollo: {
+            character: gql`
+                query {
+                    character(id: 1) {
+                        films {
+                            title
+                        }
+                    }
+                }
+            `
+        },
     }
 </script>
 <style lang="scss" scoped>

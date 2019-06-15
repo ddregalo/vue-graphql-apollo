@@ -3,7 +3,7 @@
     <div class="characters">
       <b-card-group deck>
         <div v-for="character in allCharacters" :key="character.name">
-          <Character :character="character"></Character>
+          <Character :role="character"></Character>
         </div>
       </b-card-group>
     </div>
