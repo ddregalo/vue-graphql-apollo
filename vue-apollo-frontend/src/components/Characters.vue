@@ -2,8 +2,8 @@
   <div class="container">
     <div class="characters">
       <b-card-group deck>
-        <div v-for="character in allCharacters" :key="character.name">
-          <Character :role="character"></Character>
+        <div v-for="(character, index) in allCharacters" :key="character.name">
+          <Character :role="character" :id="index"></Character>
         </div>
       </b-card-group>
     </div>

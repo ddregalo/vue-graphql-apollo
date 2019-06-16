@@ -11,7 +11,7 @@
             </b-card-text>
             <div slot="footer">
                 <div>
-                    <b-button 
+                    <b-button
                         block href="#" 
                         v-b-toggle="'accordion' + role.name.trim()" 
                         variant="info">Movies
@@ -32,17 +32,26 @@
         name: "character",
         props: {
             role: {},
+            id: {},
         },
-        apollo: {
-            character: gql`
-                query {
-                    character(id: 1) {
-                        films {
-                            title
+        apollo: {        
+            character: {
+                query: 
+                    gql`
+                        query character($id: Int!) {
+                                character(id: $id) {
+                                    films {
+                                        title
+                                    }
+                                }
                         }
+                    `,
+                variables() {
+                    return {
+                        id: this.id,
                     }
-                }
-            `
+                },
+            }, 
         },
     }
 </script>
