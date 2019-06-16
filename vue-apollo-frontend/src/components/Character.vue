@@ -17,8 +17,7 @@
                         variant="info">Movies
                     </b-button>
                     <b-collapse :id="'accordion' + role.name.trim()" visible accordion="movie-accordion" role="tabpanel">
-                        <b-card-text>Movies listed here:</b-card-text>
-                        <b-card-text>{{ character.films.title }}</b-card-text>
+                        <b-card-text class="movie">{{ character.films.title }}</b-card-text>
                     </b-collapse>
                 </div>
             </div>
@@ -61,8 +60,9 @@
     }
 
     .card-body {
-        max-height: 160px;
-        max-width: 207px;
+        max-height: 170px;
+        min-width: 210px;
+        max-width: 210px;
         overflow: hidden;
     }
 
@@ -77,10 +77,8 @@
         overflow-y: scroll;  
     }
 
-    .movies {
-        min-width: 207px;
-        background-color: rgb(17, 0, 255);
-        font-weight: 500;
+    .movie {
+        padding: 12px 8px 12px 8px;
     }
 
     #acordion-1 {
