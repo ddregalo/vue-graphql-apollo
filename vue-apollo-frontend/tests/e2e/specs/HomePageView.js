@@ -15,6 +15,6 @@ describe("Home Page View", () => {
   it("Visits the home page and clicks to visit About page", () => {
     cy.visit("/");
     cy.get('[href="/about"]').click();
-    cy.contains('This is an about page');
+    cy.get("h5").contains("ABOUT");
   });
 });
