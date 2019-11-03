@@ -10,10 +10,10 @@ describe("Characters.vue", () => {
     wrapper.setData({
       allCharacters: [
         {
-          name: 'DarkSideOfTheMoon',
-          gender: 'male',
-          eye_color: 'brown',
-        },
+          name: "DarkSideOfTheMoon",
+          gender: "male",
+          eye_color: "brown",
+        }
       ]
     });
     expect(wrapper.element).toMatchSnapshot();
