@@ -7,17 +7,17 @@ Vue.config.ignoredElements = [
 ];
 
 describe("Characters.vue", () => {
-    it("renders the correct html for single charater snapshot", () => {
-        const wrapper = shallowMount(Characters);
-        wrapper.setData({
-            allCharacters: [
-                {
-                name: 'DarkSideOfTheMoon',
-                gender: 'male',
-                eye_color: 'brown',
-                },
-            ],
-        });
-        expect(wrapper.element).toMatchSnapshot();
+  it("renders the correct html for single charater snapshot", () => {
+    const wrapper = shallowMount(Characters);
+    wrapper.setData({
+      allCharacters: [
+        {
+          name: 'DarkSideOfTheMoon',
+          gender: 'male',
+          eye_color: 'brown',
+        },
+      ]
     });
+    expect(wrapper.element).toMatchSnapshot();
+  });
 });
