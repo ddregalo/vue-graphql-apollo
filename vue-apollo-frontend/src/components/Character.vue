@@ -1,6 +1,6 @@
 <template>
     <div class="character">  
-        <b-card :title="role.name">
+        <b-card :title="role.name" class="z-depth-2">
             <b-card-text>
                 <div class="character-card">
                     <p>Gender: </p>
@@ -14,7 +14,7 @@
                     <b-button
                         block href="#" 
                         v-b-toggle="'accordion' + role.name.trim()" 
-                        variant="info">Movies
+                        class="movie-button">Movies
                     </b-button>
                     <b-collapse :id="'accordion' + role.name.trim()" visible accordion="movie-accordion" role="tabpanel">
                         <b-card-text class="movie">{{ character.films.title }}</b-card-text>
@@ -79,6 +79,10 @@
 
     .movie {
         padding: 12px 8px 12px 8px;
+    }
+
+    .movie-button {
+        background-color: rgb(0, 177, 177);
     }
 
     #acordion-1 {
