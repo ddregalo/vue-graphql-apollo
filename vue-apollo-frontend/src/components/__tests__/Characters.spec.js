@@ -1,10 +1,8 @@
 import { shallowMount } from "@vue/test-utils";
 import Characters from "@/components/Characters.vue";
-import Vue from 'vue';
+import Vue from "vue";
 
-Vue.config.ignoredElements = [
-  'b-card-group',
-];
+Vue.config.ignoredElements = ["b-card-group"];
 
 describe("Characters.vue", () => {
   it("renders the correct html for single charater snapshot", () => {
